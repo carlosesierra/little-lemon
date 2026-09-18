@@ -1,5 +1,4 @@
-
-import Main from './Main.js';
+import Header from './Header.js';
 
 import './App.css';
 
@@ -9,4 +8,4 @@ function App() {
   );
 }
 
-export default App;
+export default Header;
