@@ -1,4 +1,15 @@
-# Getting Started with Create React App
+# Little Lemon app 
+
+The Little Lemon app is a fictional restaurant mobile and web application widely used as a capstone project for Meta's front-end, Android, and iOS development courses on Coursera.
+
+Key FeaturesInteractive Menu: Browse and filter food items by categories or search for specific dishes by name.
+
+Table Reservations: Book a restaurant table by picking dates, times, and party sizes.User 
+
+Profiles: Create an account, manage personal preferences, and customize profile details.
+
+Local Data Storage: Uses technologies like SQLite and AsyncStorage to cache menu data and save user preferences offline.
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
