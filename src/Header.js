@@ -1,10 +1,14 @@
-import Header from './Header.js';
 
-import './App.css';
-
-function App() {
+import Nav from './Nav.js';
+const Header = () => {
   return (
-      <Main />
+    <>
+      <header>
+          <Nav/>
+      </header>      
+  
+    </>
+
   );
 }
 

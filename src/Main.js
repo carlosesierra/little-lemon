@@ -3,22 +3,23 @@ import logo from './logo.svg';
 
 const Main = () => {
   return (
-    <div className='App'>
-      <header>
-        <img src={logo} className='App-logo' alt='logo' />
-        <p>
-          little lemon <code>[some code]</code> coming soon.
-        </p>
+     <>
+    <main>      
+        <h1>Little Lemon</h1>
+        <br/>
+      <img src={logo} className='logo' alt='logo' />
+      <p>
+        little lemon <code>[some code]</code> coming soon.
+      </p>
         <a
-          className='App-link'
-          href='https://reactjs.org'
-          target='_blank'
-          rel='noopener noreferrer'
+        href='https://reactjs.org'
+        target='_blank'
+        rel='noopener noreferrer'
         >
-          I will learn React
+        I will learn React
         </a>
-      </header>
-    </div>
+    </main>
+    </>
   );
 }
 
