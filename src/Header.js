@@ -1,12 +1,12 @@
 
 import Nav from './Nav.js';
+import Hero from './Hero.js';
+
 const Header = () => {
   return (
     <>
-      <header>
           <Nav/>
-      </header>      
-  
+          <Hero/>
     </>
 
   );

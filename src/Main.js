@@ -1,26 +1,14 @@
-
-import logo from './logo.svg';
+import Specials from './Specials.js';
 
 const Main = () => {
   return (
      <>
-    <main>      
-        <h1>Little Lemon</h1>
-        <br/>
-      <img src={logo} className='logo' alt='logo' />
-      <p>
-        little lemon <code>[some code]</code> coming soon.
-      </p>
-        <a
-        href='https://reactjs.org'
-        target='_blank'
-        rel='noopener noreferrer'
-        >
-        I will learn React
-        </a>
+    <main>
+      <Specials />
     </main>
     </>
   );
 }
+
 
 export default Main;
