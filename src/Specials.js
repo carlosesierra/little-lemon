@@ -34,7 +34,7 @@ const Specials = () => {
     </section>
     <section aria-label='specials items' className='special-item'>
         {specialItems.map((specialItems, index) => (
-            <article>
+            <article key={index}>
                 <figcaption aria-label='special item image'>
                     <img src={specialItems.image} alt={specialItems.title}/>
                 </figcaption>
