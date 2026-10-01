@@ -279,6 +279,30 @@ main {
   z-index: 1;
 }
 
+/*booking*/
+.booking {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 2rem;
+  padding: 2rem 0;
+}
+.booking article, .booking form {
+  display: grid;
+  grid-column: 2 / 12;
+}
+.booking form {
+  gap: .5rem;
+}
+.booking form input, .booking form select, .booking form textarea {
+  padding: 1rem;
+  margin: 0 0 1rem 0;
+  border-radius: .5rem;
+  border: 1px solid var(--lemon-green);
+}
+.booking form button {
+  gap: 5rem;
+}
+
 /*footer*/
  footer{
   display: grid;
@@ -295,12 +319,11 @@ main {
   grid-column: 2 / 12;
   display: grid;
   color: #ffffff;
+  align-content: start;
 }
 .footer-section figcaption img {
   width: 4rem;
 }
-
-
 
 @media (min-width: 1024px) {
 
@@ -382,6 +405,9 @@ main {
   .footer-section figcaption {
     grid-column: auto;
   }
+  .booking {
+    grid-column: 4 / 10
+  }
 }
 @media (min-width: 1375px) {
    header figcaption{
@@ -389,5 +415,7 @@ main {
    }
    main {
     margin-top: 5rem;
+  }.booking {
+    grid-column: 5 / 9
   }
 }

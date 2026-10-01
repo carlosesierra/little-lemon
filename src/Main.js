@@ -1,16 +1,23 @@
-import Specials from './Specials.js';
-import Customers from './Testimonials.js';
-import About from './About.js';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './Home.js';
+import Booking from './Booking.js';
 
 const Main = () => {
   return (
-     <>
-    <main>
-      <Specials />
-      <Customers />
-      <About />
-    </main>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route
+        path='/' 
+        element={<Home />}
+        >
+        </Route>
+        <Route 
+        path='/booking' 
+        element={<Booking />}
+        >
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
