@@ -9,20 +9,16 @@ const about = {
 const About = () => {
   return (
     <>
-    <section aria-label='about' className='about'>
+    <section aria-label='about' className='grid-container about' id='about'>
         <article aria-label='about copy'>
-            <h2>{about.title}</h2>
-            <h3>{about.subtitle}</h3>
+            <h2 className='color-green'>{about.title}</h2>
+            <h3 className='color-salmon'>{about.subtitle}</h3>
             <p>{about.description}</p>
         </article>
-        <span>
-        <figcaption aria-label='about image'>
+        <figure aria-label='about image' className='grid-container'>
           <img src={about.image1} alt={about.title} />
-        </figcaption>
-        <figcaption aria-label='about image'>
           <img src={about.image2} alt={about.title} />
-        </figcaption>
-        </span>
+        </figure>
     </section>
     </>
   );

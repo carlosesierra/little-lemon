@@ -6,7 +6,7 @@ const footerImage = {
 
 const footerList = [
     {
-    title:'Doormat Navigation',
+    title:'Menu',
     listItem:['home', 'about', 'menu', 'reservations', 'order online', 'login'],
     },
      {
@@ -22,13 +22,11 @@ const footerList = [
 const Footer = () => {
   return (
      <>
-    <footer>
-      <section aria-label='footer items' className='footer-section'>
-        <figcaption aria-label='footer item image'>
-          <img src={footerImage.image} alt={footerImage.alt} />
-        </figcaption>
+    <footer className='bg-green'>
+      <section aria-label='footer items' className='grid-container'>
+        <img src={footerImage.image} alt={footerImage.alt}/>
         {footerList.map((footerItem, index) => (
-            <article key={index}>
+            <article key={index} className='color-light'>
                <h3>{footerItem.title}</h3>
                <ul>
                 {footerItem.listItem.map((item) => (
@@ -37,7 +35,6 @@ const Footer = () => {
                </ul>
             </article>
         ))}
-
       </section>
     </footer>
     </>

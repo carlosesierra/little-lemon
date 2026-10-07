@@ -25,31 +25,30 @@ const specialItems = [
 
 const Specials = () => {
   return (
-     <>
-    <section aria-label='specials introduction' className='specials-intro'>
-       <h2>{special.title}</h2>
-      <span>
-        <button>Reserve a Table</button>
-      </span>
-    </section>
-    <section aria-label='specials items' className='special-item'>
+    <>
+      <section aria-label='specials introduction' className='grid-container specials-intro'>
+        <article>
+          <h2>{special.title}</h2>
+          <button>Reserve a Table</button>
+        </article>
+      </section>
+
+      <section aria-label='specials items' className='grid-container specials-item'>
         {specialItems.map((specialItems, index) => (
-            <article key={index}>
-                <figcaption aria-label='special item image'>
-                    <img src={specialItems.image} alt={specialItems.title}/>
-                </figcaption>
-                <div className='special-item-header'>
-                    <h3>{specialItems.title}</h3>
-                    <h4 className='color-salmon'>{specialItems.price}</h4>
-                </div>
-                <p>{specialItems.copy}</p>
-                <a href='#logo' className='special-item-delivery'>
-                    <h6>Order a delivery</h6>
-                    <img src='./delivery.svg' alt='delivery'/>
-                </a>
-            </article>
+          <article key={index}>
+            <img src={specialItems.image} alt={specialItems.title} />
+            <div className='specials-item-header'>
+              <h3>{specialItems.title}</h3>
+              <p className='color-salmon'>{specialItems.price}</p>
+            </div>
+            <p>{specialItems.copy}</p>
+            <a href='#order-online' className='specials-item-delivery color-dark'>
+              <span>Order a delivery</span>
+              <img src='./delivery.svg' alt=''/>
+            </a>
+          </article>
         ))}
-    </section>
+      </section>
     </>
   );
 }
