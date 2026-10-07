@@ -1,19 +1,34 @@
-const Bookings = ({ availableTimes }) => {
+const Bookings = ({
+  availableTimes,
+  selectedDate = '',
+  }) => {
   return (
-    <section aria-label='Available booking times' className='grid-container booking'>
-      <article aria-label='booking times'>
-        <h2 id='available-bookings-heading'>
+    <section
+      aria-labelledby='available-bookings-heading'
+      className='grid-container booking pt-0'
+    >
+      <article>
+        <h2 id='available-bookings-heading' className='mt-0'>
           Available booking times
         </h2>
-        {availableTimes.length === 0 ? (
-        <p>No booking times are available.</p>
-      ) : (
-        <ul className='times' aria-labelledby='available-bookings-heading'>
-          {availableTimes.map((time) => (
-            <li key={time}>{time}</li>
-          ))}
-        </ul>
-      )}
+
+        {!selectedDate ? (
+          <p>Choose a date to see its available times.</p>
+        ) : (
+          <>
+            <p>Available times for {selectedDate}</p>
+
+            {availableTimes.length === 0 ? (
+              <p>No times are available. Choose another date.</p>
+            ) : (
+              <ul className='times'>
+                {availableTimes.map((time) => (
+                  <li key={time}>{time}</li>
+                ))}
+              </ul>
+            )}
+          </>
+        )}
       </article>
     </section>
   );

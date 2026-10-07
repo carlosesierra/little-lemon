@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 const hero = {
     title: 'Little Lemon',
     subtitle: 'Chicago',
@@ -12,9 +14,11 @@ const Hero = () => {
     <header className='grid-container bg-green'>
         <article aria-label='hero copy'>
             <h1>{hero.title}</h1>
-            <h3>{hero.subtitle}</h3>
+            <p className='color-salmon subtitle'>{hero.subtitle}</p>
             <p>{hero.description}</p>
-            <button>Reserve a Table</button>
+            <Link to='/booking' className='button'>
+              Reserve a Table
+            </Link>
         </article>
         <img
           src={hero.image}

@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 const special = {
     title: 'This Weeks Specials!',
 }
@@ -12,7 +14,7 @@ const specialItems = [
     {
     title:'Bruschetta', 
     price:'$5.99', 
-    copy:'The famous greek salad of crispy lettuce, peppers, olives and our Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons.',
+    copy:'Toasted bread topped with tomatoes, fresh basil and olive oil.',
     image:'./bruchetta.png'
     },
     {
@@ -29,7 +31,9 @@ const Specials = () => {
       <section aria-label='specials introduction' className='grid-container specials-intro'>
         <article>
           <h2>{special.title}</h2>
-          <button>Reserve a Table</button>
+          <Link to='/booking' className='button'>
+            Reserve a Table
+          </Link>
         </article>
       </section>
 
@@ -42,10 +46,9 @@ const Specials = () => {
               <p className='color-salmon'>{specialItems.price}</p>
             </div>
             <p>{specialItems.copy}</p>
-            <a href='#order-online' className='specials-item-delivery color-dark'>
-              <span>Order a delivery</span>
-              <img src='./delivery.svg' alt=''/>
-            </a>
+            <p className='color-dark'>
+              Online ordering coming soon.
+            </p>
           </article>
         ))}
       </section>

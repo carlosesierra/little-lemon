@@ -1,18 +1,43 @@
 import { useState } from 'react';
-
+import { NavLink } from 'react-router-dom';
 import logo from './logo.svg';
 
-const MenuLinks = () => {
-    return (
-        <>
-            <li><a href='/'>Home</a></li>
-            <li><a href='#about'>About</a></li>
-            <li><a href='booking'>Reservations</a></li>
-            <li><a href='#order-online'>Order Online</a></li>
-            <li><a href='#login'>Login</a></li>
-        </>
-    );
-}
+
+const MenuLinks = ({ onNavigate }) => {
+  const linkClass = ({ isActive }) =>
+    isActive ? 'nav-link active' : 'nav-link';
+
+  return (
+    <>
+      <li>
+        <NavLink
+          to='/'
+          end
+          className={linkClass}
+          onClick={onNavigate}
+        >
+          Home
+        </NavLink>
+      </li>
+
+      <li>
+        <a href='/#about' onClick={onNavigate}>
+          About
+        </a>
+      </li>
+
+      <li>
+        <NavLink
+          to='/booking'
+          className={linkClass}
+          onClick={onNavigate}
+        >
+          Reservations
+        </NavLink>
+      </li>
+    </>
+  );
+};
 
 
 const Nav = () => {
@@ -28,7 +53,7 @@ const Nav = () => {
     <nav className='grid-container'>
         <img src={logo} alt='Little Lemon' id='#logo'/>
           <ul className='menu-desktop'>
-            <MenuLinks />
+            <MenuLinks onNavigate={() => setIsOpen(false)} />
           </ul>
           <button
             type='button'
@@ -40,7 +65,7 @@ const Nav = () => {
     </nav>
     {isOpen && (
         <ul className='menu-mobile'>
-            <MenuLinks />
+            <MenuLinks onNavigate={() => setIsOpen(false)} />
         </ul>
     )}
     </>

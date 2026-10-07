@@ -5,6 +5,7 @@ import { initializeTimes, updateTimes, submitBooking, } from './Main';
 
 beforeEach(() => {
   localStorage.clear();
+  sessionStorage.clear();
 
   global.fetchAPI = jest.fn();
   global.submitAPI = jest.fn().mockReturnValue(true);
@@ -12,6 +13,7 @@ beforeEach(() => {
 
 afterEach(() => {
   localStorage.clear();
+  sessionStorage.clear();
 
   delete global.fetchAPI;
   delete global.submitAPI;

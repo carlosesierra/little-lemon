@@ -62,7 +62,7 @@ const Testimonials = () => {
                   <div className='grid-container user'>
                       <img src={item.image} alt={item.title}/>
                       <div>
-                          <h4>{item.title}</h4>
+                          <h3>{item.title}</h3>
                           <small>{item.username}</small>
                       </div>
                   </div>
