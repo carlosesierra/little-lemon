@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import logo from './logo.svg';
 
 const contact = {
   address: '123 Mediterranean Avenue Chicago, IL',
@@ -16,10 +17,14 @@ const Footer = () => {
         aria-label='Footer information'
         className='grid-container max-w-1200'
       >
-        <img
-          src='/icon.svg'
-          alt='Little Lemon restaurant'
-        />
+        {/* <figure>
+            
+            <figcaption>Little<br/>Lemon</figcaption>
+        </figure> */}
+        <figure>
+          <img src={logo} alt='Little Lemon' id='#logo'/>
+          <figcaption>Little<br/>Lemon</figcaption>
+        </figure>
 
         <article className='color-light'>
           <h3>Menu</h3>

@@ -3,6 +3,7 @@
 --lemon-green: #495E57;
 --lemon-dark: #333333;
 --lemon-salmon:#ee9972;
+--lemon-light: #ffffff;
 padding: 0;
 margin: 0;
 }
@@ -71,7 +72,6 @@ border: none;
 padding: .75rem 1.5rem;
 cursor: pointer;
 border-radius: 1rem;
-font-size: 1.125rem;
 width: max-content;
 }
 dt{
@@ -86,7 +86,7 @@ grid-template-columns: repeat(12, 1fr);
 gap: 2rem 0;
 padding: 2rem 0;
 margin-inline: auto;
-align-items: center;
+align-items: start;
 }
 .sr-only{
 position: absolute;
@@ -113,13 +113,30 @@ margin-inline: auto;
 }
 
 /*nav*/
-nav img {
+nav.grid-container{
+align-items: center;
+padding: 1rem 0;
+}
+nav figure {
+grid-column: 2 / 4;
+display: flex;
+align-items: center;
+}
+nav figure h1 {
+font-size: 1.25rem;
+line-height: 1.5rem;
+padding: .5rem;
+font-weight: 700;
+color: var(--lemon-green);
+}
+nav figure img {
 width: 4rem;
 grid-column: 2 / 4;
 }
 nav button {
-padding: .5rem 1rem;
 grid-column: auto / 12;
+font-size: 1.5rem;
+line-height: 2rem;
 }
 .menu-mobile{
 display: grid;
@@ -252,11 +269,22 @@ top: -50%;
 }
 
 /*footer*/
-footer section article, footer section img{
+footer section article, footer section figure{
 grid-column: 2 / 12;
 }
-footer section img{
+footer section figure{
+display: flex;
+align-items: center;
+}
+footer section figure img{
 width: 4rem;
+}
+footer figure figcaption {
+font-size: 1.25rem;
+line-height: 1.5rem;
+padding: 0 0 0 .75rem;
+font-weight: 700;
+color: var(--lemon-yellow);
 }
 footer section article{
 align-content: start;
@@ -325,7 +353,7 @@ border: 2px solid #a61b1b;
 .menu-mobile, nav button {
 display: none;
 }
-nav img {
+nav figure {
 grid-column: 2 / auto;
 }
 .menu-desktop {
@@ -344,10 +372,9 @@ bottom: 2rem;
 position: absolute;
 }
 .specials-intro article{
-display: grid;
-grid-auto-flow: column;
+display: flex;
 justify-content: space-between;
-grid-column: 2 / 12;
+align-items: center;
 }
 .specials-item{
 grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -379,8 +406,8 @@ padding: 2rem 6.333%;
 align-items: start;
 }
 
-footer  section  img,
-footer  section  article {
+footer section figure,
+footer section article {
 grid-column: auto;
 }
 .booking article, .booking form{

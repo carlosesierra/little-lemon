@@ -51,7 +51,10 @@ const Nav = () => {
   return (
     <>
     <nav className='grid-container max-w-1200'>
-        <img src={logo} alt='Little Lemon' id='#logo'/>
+          <figure>
+              <img src={logo} alt='Little Lemon' id='#logo'/>
+              <h1>Little<br/>Lemon</h1>
+          </figure>
           <ul className='menu-desktop'>
             <MenuLinks onNavigate={() => setIsOpen(false)} />
           </ul>
@@ -59,9 +62,13 @@ const Nav = () => {
             type='button'
             onClick={toggleMenu}
             aria-expanded={isOpen}
-            >
-            {isOpen ? 'Close menu' : 'Open menu'}
-        </button>
+            aria-label={isOpen ? 'Close menu' : 'Open menu'}
+            className='menu-toggle'
+          >
+            <span aria-hidden='true'>
+              {isOpen ? '✕' : '☰'}
+            </span>
+          </button>
     </nav>
     {isOpen && (
         <ul className='menu-mobile'>

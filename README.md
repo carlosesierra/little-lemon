@@ -1,81 +1,147 @@
-# Little Lemon app 
+# Little Lemon Restaurant Website
 
-The Little Lemon app is a fictional restaurant mobile and web application widely used as a capstone project for Meta's front-end, Android, and iOS development courses on Coursera.
+A React website for the fictional Little Lemon restaurant, developed as part of the Coursera Meta Front-End Developer Capstone.
 
-Key FeaturesInteractive Menu: Browse and filter food items by categories or search for specific dishes by name.
+Visitors can browse restaurant information and specials, complete a table reservation form and view their reservation confirmation.
 
-Table Reservations: Book a restaurant table by picking dates, times, and party sizes.User 
+## Features
 
-Profiles: Create an account, manage personal preferences, and customize profile details.
+- Responsive layouts and mobile navigation.
+- Table reservations with date, time, guest count and occasion selection.
+- HTML5 and React form validation.
+- Available reservation times supplied by a mock API.
+- Confirmation page displaying submitted reservation details.
+- Successful bookings saved in local storage.
+- Temporary form drafts saved in session storage, with a discard option.
 
-Local Data Storage: Uses technologies like SQLite and AsyncStorage to cache menu data and save user preferences offline.
+## Technologies
 
+- React
+- React Router
+- JavaScript, HTML and CSS
+- Create React App
+- Jest and React Testing Library
+- Browser local storage and session storage
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Prerequisites
 
-## Available Scripts
+Install Node.js and npm. Git is required if cloning the repository.
 
-In the project directory, you can run:
+Check that these tools are available:
 
-### `npm start`
+```bash
+node --version
+npm --version
+git --version
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Setup
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 1. Download the project
 
-### `npm test`
+Clone the repository:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+git clone https://github.com/carlosesierra/little-lemon.git
+cd little-lemon
+```
 
-### `npm run build`
+Alternatively, download and extract the repository ZIP, then open a terminal inside the folder containing `package.json`.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 2. Install dependencies
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+npm ci
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This installs the dependencies recorded in `package-lock.json`.
 
-### `npm run eject`
+### 3. Start the development server
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+npm start
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Open [http://localhost:3000](http://localhost:3000).
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+The page reloads when source files change. If port 3000 is occupied, follow the terminal prompt and use the address it displays.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Press **Ctrl+C** in the terminal to stop the server.
 
-## Learn More
+## Using the Reservation Form
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. Select **Reservations** or **Reserve a Table**.
+2. Enter a name with at least two characters and a valid email.
+3. Choose today or a future date.
+4. Select an available time.
+5. Enter a whole number between 1 and 10 guests.
+6. Choose an occasion.
+7. Select **Make Your Reservation**.
+8. Check the reservation details on the confirmation page.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The submit control remains disabled until the form is valid.
 
-### Code Splitting
+An unfinished draft is restored when returning to the form in the same browser tab, provided session storage is available. Select **Discard draft** to reset it.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Running Tests
 
-### Analyzing the Bundle Size
+Run all tests once:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```bash
+npm test -- --watchAll=false
+```
 
-### Making a Progressive Web App
+Run tests in interactive watch mode:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```bash
+npm test
+```
 
-### Advanced Configuration
+The existing tests cover static text, reservation availability functions, form validation, submission callbacks and local-storage behaviour.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Creating a Production Build
 
-### Deployment
+```bash
+npm run build
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+The generated production files are placed in the `build/` directory.
 
-### `npm run build` fails to minify
+When deploying, configure the host to serve `index.html` for application routes such as `/booking` and `/booking-confirmed`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Application Routes
+
+| Route | Purpose |
+|---|---|
+| `/` | Restaurant home page |
+| `/booking` | Reservation form and available times |
+| `/booking-confirmed` | Confirmation details after successful submission |
+
+Opening the confirmation route without successful submission state displays guidance instead of a reservation confirmation.
+
+## Mock API and Browser Storage
+
+The course demonstration API is bundled in `public/api.js` and loaded by `public/index.html`.
+
+- `fetchAPI(date)` returns demonstration reservation times.
+- `submitAPI(formData)` simulates successful submission.
+
+No API keys, environment variables, database setup or separate backend server are required.
+
+This is an educational demonstration. Submissions do not create real restaurant reservations.
+
+Bookings use the `bookings` local-storage key. Drafts use the `bookingDraft` session-storage key. These records are specific to the browser and website origin; they are not shared across devices.
+
+## Troubleshooting
+
+- **`node` or `npm` is not found:** install Node.js and npm, then reopen the terminal.
+- **The project does not start:** confirm you are inside the folder containing `package.json` and have completed dependency installation.
+- **`npm ci` reports a lockfile mismatch:** `package.json` and `package-lock.json` need to be synchronized by the project maintainer.
+- **`fetchAPI` is undefined:** confirm `public/api.js` exists and its script tag remains in `public/index.html`.
+- **The submit control stays disabled:** check every required field, including the selected date, available time and guest count.
+- **A `punycode` deprecation warning appears:** check the final test or build result separately. The warning has appeared during successful test runs.
+
+## Author
+
+Carlos Sierra  
+Coursera Meta Front-End Developer Capstone
