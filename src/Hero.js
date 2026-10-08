@@ -11,7 +11,8 @@ const hero = {
 const Hero = () => {
   return (
     <>
-    <header className='grid-container bg-green'>
+    <header className='bg-green'>
+      <section className='grid-container max-w-1200'>
         <article aria-label='hero copy'>
             <h1>{hero.title}</h1>
             <p className='color-salmon subtitle'>{hero.subtitle}</p>
@@ -24,6 +25,7 @@ const Hero = () => {
           src={hero.image}
           alt={hero.alt}
         />
+        </section>
     </header>
     </>
   );

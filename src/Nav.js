@@ -50,7 +50,7 @@ const Nav = () => {
 
   return (
     <>
-    <nav className='grid-container'>
+    <nav className='grid-container max-w-1200'>
         <img src={logo} alt='Little Lemon' id='#logo'/>
           <ul className='menu-desktop'>
             <MenuLinks onNavigate={() => setIsOpen(false)} />

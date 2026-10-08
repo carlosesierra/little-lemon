@@ -52,10 +52,10 @@ const getStarRating = (rating = 0) => {
 const Testimonials = () => {
   return (
     <>
-      <section aria-label='testimonials introduction' className='testimonials-intro'>
+      <section aria-label='testimonials introduction' className='testimonials-intro max-w-1200'>
          <h2>{testimonial.title}</h2>
       </section>
-      <section aria-label='testimonials items' className='grid-container testimonial-item'>
+      <section aria-label='testimonials items' className='grid-container testimonial-item max-w-1200'>
           {testimonialItems.map((item, index) => (
               <article key={index}>
                   {getStarRating(item.rating)}

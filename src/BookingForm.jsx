@@ -220,16 +220,14 @@ const BookingForm = ({
   };
 
   return (
-    <section aria-labelledby='booking-form-heading' className='grid-container booking pt-0'>
+    <section aria-labelledby='booking-form-heading' className='grid-container booking'>
       <article aria-label='booking copy'>
         <h2 id='booking-form-heading' className='sr-only'>
           Reserve a Table
         </h2>
         <p>Book your table online and enjoy a delicious meal at Little Lemon.</p>
         <small>
-          Complete all fields. Use a name with at least two characters,
-          a valid email, today's date or later, an available time,
-          and between 1 and 10 guests.
+          Complete all fields. Use a name with at least two characters, a valid email, today's date or later, an available time and between 1 and 10 guests.
         </small>
       </article>
 

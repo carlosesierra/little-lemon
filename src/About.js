@@ -9,7 +9,7 @@ const about = {
 const About = () => {
   return (
     <>
-    <section aria-label='about' className='grid-container about' id='about'>
+    <section aria-label='about' className='grid-container about max-w-1200' id='about'>
         <article aria-label='about copy'>
             <h2 className='color-green'>{about.title}</h2>
             <h3 className='color-salmon'>{about.subtitle}</h3>

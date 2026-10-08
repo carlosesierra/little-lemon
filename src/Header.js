@@ -18,7 +18,7 @@ const Header = () => {
       {isHome ? (
         <Hero />
       ) : (
-        <header className='grid-container page-header'>
+        <header className='grid-container booking-header max-w-1200'>
           <div>
             <h1>{title}</h1>
           </div>

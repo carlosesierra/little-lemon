@@ -28,7 +28,7 @@ const specialItems = [
 const Specials = () => {
   return (
     <>
-      <section aria-label='specials introduction' className='grid-container specials-intro'>
+      <section aria-label='specials introduction' className='grid-container specials-intro max-w-1200'>
         <article>
           <h2>{special.title}</h2>
           <Link to='/booking' className='button'>
@@ -37,7 +37,7 @@ const Specials = () => {
         </article>
       </section>
 
-      <section aria-label='specials items' className='grid-container specials-item'>
+      <section aria-label='specials items' className='grid-container specials-item max-w-1200'>
         {specialItems.map((specialItems, index) => (
           <article key={index}>
             <img src={specialItems.image} alt={specialItems.title} />

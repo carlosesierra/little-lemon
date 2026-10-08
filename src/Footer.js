@@ -14,7 +14,7 @@ const Footer = () => {
     <footer className='bg-green'>
       <section
         aria-label='Footer information'
-        className='grid-container'
+        className='grid-container max-w-1200'
       >
         <img
           src='/icon.svg'
